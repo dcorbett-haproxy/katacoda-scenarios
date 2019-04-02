@@ -23,6 +23,12 @@
       "text": "finish.md"
     }
   },
+  "assets": {
+    "client": [
+        { "file" : "haproxy.cfg", "target": "~/" }
+    ]
+   }
+  },
   "environment": {
     "uilayout": "editor-terminal"
   },
