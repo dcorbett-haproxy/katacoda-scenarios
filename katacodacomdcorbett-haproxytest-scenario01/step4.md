@@ -7,7 +7,7 @@ Sending `show info` to the Runtime API should give you information about the run
 
 Run the below in the terminal.
 
-`echo "show info" | socat - tcp-connect:172.18.0.2:9000`{{execute T1}} 
+`echo "show info" | socat - tcp-connect:172.18.0.4:9000`{{execute T1}} 
 
 
 ### show stat
@@ -17,7 +17,7 @@ The statistics output contains more than 80 different metrics. To quickly conver
 
 Run the below in the terminal.
 
-`echo "show stat" | socat - tcp-connect:172.18.0.2:9000  | cut -d "," -f 1-2,5-10,34-36 | column -s, -t'`{{execute T1}}
+`echo "show stat" | socat - tcp-connect:172.18.0.4:9000  | cut -d "," -f 1-2,5-10,34-36 | column -s, -t'`{{execute T1}}
 
 ### set server
 Sending `set server` allows you to change multiple aspects about a specific server within an HAProxy `backend`.  Some of the items that can be changed are:
@@ -37,7 +37,7 @@ For this example we will disable one of the servers from receiving traffic.
 
 Run the below in the terminal.
 
-`echo "set server be_app/app1 maint" | socat - tcp-connect:172.18.0.2:9000`{{execute T1}}
+`echo "set server be_app/app1 maint" | socat - tcp-connect:172.18.0.4:9000`{{execute T1}}
 
 The server **app1** should now be disabled.  You can confirm by sending this by navigating to the statistics page: [https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/haproxy-stats
 
