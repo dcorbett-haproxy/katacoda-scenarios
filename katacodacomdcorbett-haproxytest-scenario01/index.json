@@ -31,7 +31,7 @@
   "files": [ "haproxy.cfg" ],
   "environment": {
     "uilayout": "editor-terminal",
-    "uieditorpath": "~/haproxy",
+    "uieditorpath": "~/",
     "hideuieditortree": true
   },
   "backend": {
