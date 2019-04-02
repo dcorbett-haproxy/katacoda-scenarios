@@ -64,11 +64,15 @@ When you place HAProxy as a reverse proxy in front of your backend servers, a `f
 Consider the following example:
 <pre class="file" data-filename="haproxy.cfg" data-target="append">frontend fe_main 
     bind :80
+    use_backend be_stats if { path_beg /haproxy-stats } 
     default_backend be_app 
 </pre>
 
 ### bind
 A `bind` setting assigns a listener to a given IP address and port. The IP can be omitted to `bind` to all IP addresses on the server and a port can be a single port, a range, or a comma-delimited list.
+
+### use_backend
+The `use_backend` setting chooses a backend pool of servers to respond to incoming requests if a given condition is true. It is followed by an ACL statement, such as `if path_beg /haproxy-stats`, that allows HAProxy to select a specific backend based on some criteria, such as checking if the path begins with /haproxy-stats.
 
 ### default_backend
 The `default_backend` setting is found in nearly every `frontend` and gives the name of a `backend` to send traffic to if a `use_backend` rule doesn’t send it elsewhere first. If a request isn’t routed by a `use_backend` or `default_backend` directive, HAProxy will return a 503 Service Unavailable error.
@@ -83,6 +87,9 @@ The `balance` setting controls how HAProxy will select the server to respond to 
     balance roundrobin 
     server app1 172.18.0.3:80 check
     server app2 172.18.0.4:80 check
+
+backend be_stats
+  stats uri /haproxy-stats
 </pre>
 
 ### server
