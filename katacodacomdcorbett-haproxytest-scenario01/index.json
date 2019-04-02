@@ -4,7 +4,7 @@
   "details": {
     "intro": {
         "text":"intro.md",
-        "code":"env-init.sh",
+        "courseData":"env-init.sh",
         "credits":"https://www.haproxy.com/"
     },
     "steps": [

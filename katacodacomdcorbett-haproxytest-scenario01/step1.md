@@ -81,7 +81,6 @@ The `balance` setting controls how HAProxy will select the server to respond to 
 
 <pre class="file" data-filename="haproxy.cfg" data-target="append">backend be_app
     balance roundrobin 
-    option httpchk
     server app1 172.18.0.3:80 check
     server app2 172.18.0.4:80 check
 </pre>
@@ -91,7 +90,3 @@ The `server` setting is the heart of the `backend`. Its first argument is a name
 
 The `check` argument has tells HAProxy to check the health of the application server periodically.  By default it does a basic TCP check but it can be configured using `option httpchk` to send an HTTP request.
 
-### option httpchk
-The `option httpchk` setting causes HAProxy to send Layer 7 (HTTP) health checks instead of Layer 4 (TCP) checks to your backend servers. Servers that don’t respond are not served any more requests. Whereas TCP checks succeed if they’re able to make a connection to the backend server’s IP and port, HTTP health checks expect to get back a successful HTTP response. Smarter health checks are instrumental in removing unresponsive servers, even if unresponsive means just getting a bad HTTP response like 500 Server Error.
- 
-By default, an HTTP health check makes a request to the root path, /, using the OPTIONS verb. However, arguments specified here can customize that. HAProxy will treat any check that gets a 2xx or 3xx response code to be successful, although this too can be customized with an `http-check` line. Using `option httpchk` isn’t restricted to backends that use `mode http`, so servers that communicate using HTTP can be checked regardless of the proxying mode.
