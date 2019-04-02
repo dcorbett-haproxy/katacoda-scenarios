@@ -37,7 +37,7 @@ For this example we will disable one of the servers from receiving traffic.
 
 Run the below in the terminal.
 
-`echo "set server be_app/app1 maint" | socat - tcp-connect:172.18.0.4:9000`{{execute T1}}
+`echo "set server be_app/app1 state maint" | socat - tcp-connect:172.18.0.4:9000`{{execute T1}}
 
 The server **app1** should now be disabled.  You can confirm by sending this by navigating to the statistics page: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/haproxy-stats
 
