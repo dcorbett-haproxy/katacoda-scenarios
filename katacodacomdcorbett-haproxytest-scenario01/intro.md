@@ -6,5 +6,6 @@ You'll perform the following:
 * Learn the basic sections that make up an HAProxy configuration
 * Configure HAProxy in a container environment
 * Load balance traffic between 2 docker container applications 
+* Use the html statistics page to view the status of HAProxy and its frontends and backends
 * How to use the HAProxy Runtime API to get information from the running process and make live in memory changes to HAProxy
 
