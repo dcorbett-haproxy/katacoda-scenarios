@@ -1,14 +1,14 @@
 {
-  "title": "Test Scenario01",
-  "description": "Test Scenario01",
+  "title": "Getting Started with HAProxy",
+  "description": "Learn how to get started with HAProxy",
   "details": {
     "steps": [
       {
-        "title": "Step 1",
+        "title": "The essentials of an HAProxy configuration",
         "text": "step1.md"
       },
       {
-        "title": "Step 2",
+        "title": "Run the demo",
         "text": "step2.md"
       },
       {
