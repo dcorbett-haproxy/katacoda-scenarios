@@ -9,3 +9,9 @@
 
 ## Use Runtime API
 `echo "show info" | socat - tcp-connect:172.18.0.2:9000`{{execute T1}} 
+
+You can also view this in your local browser at the following URL: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/ 
+
+You should see the response:
+"This request was processed by host: <docker container id>"
+

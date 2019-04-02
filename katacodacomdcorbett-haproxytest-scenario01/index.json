@@ -12,8 +12,12 @@
         "text": "step2.md"
       },
       {
-        "title": "Step 3",
+        "title": "HAProxy Runtime API",
         "text": "step3.md"
+      },
+      {
+        "title": "HAProxy Statistics Page",
+        "text": "step4.md"
       }
     ],
     "intro": {
