@@ -7,6 +7,7 @@ A section begins when a keyword like `global` or `defaults` is encountered and i
 ## Global
 At the top of your HAProxy configuration file is the `global` section, identified by the word `global` on its own line. Settings under `global` define process-wide security and performance tunings that affect HAProxy at a low level.
 
+Copy the below into the editor.
 <pre class="file" data-filename="haproxy.cfg" data-target="replace">global
     log stdout local0
     log stdout local1 notice
@@ -33,6 +34,7 @@ You also aren’t limited to having just one `defaults`. Subsequent defaults sec
 
 So, you might decide to configure a defaults section that contains all of your TCP settings and then place your TCP-only `frontend` and `backend` sections after it. Then, place all of your HTTP settings in another `defaults` section and follow it with your HTTP frontend and backend sections.
 
+Copy the below into the editor.
 <pre class="file" data-filename="haproxy.cfg" data-target="append">defaults
     mode http
     log global
@@ -61,7 +63,7 @@ When operating HAProxy in TCP mode, which is set with `mode tcp`, `timeout serve
 ## Frontend
 When you place HAProxy as a reverse proxy in front of your backend servers, a `frontend` section defines the IP addresses and ports that clients can connect to. You may add as many `frontend` sections as needed for exposing various websites to the Internet. Each `frontend` keyword is followed by a label, such as **fe_main**, to differentiate it from others.
 
-Consider the following example:
+Copy the below into the editor.
 <pre class="file" data-filename="haproxy.cfg" data-target="append">frontend fe_main 
     bind :80
     use_backend be_stats if { path_beg /haproxy-stats } 
@@ -83,6 +85,7 @@ A `backend` section defines a group of servers that will be load balanced and as
 ### balance
 The `balance` setting controls how HAProxy will select the server to respond to the request if no persistence method overrides that selection. A persistence method might be to always send a particular client to the same server based on a cookie. Common load balancing values include `roundrobin`, which just picks the next server and starts over at the top of the list again, and `leastconn`, where HAProxy selects the server with the fewest active sessions.  If `balance` is not defined it defaults to `roundrobin`.
 
+Copy the below into the editor.
 <pre class="file" data-filename="haproxy.cfg" data-target="append">backend be_app
     balance roundrobin 
     server app1 172.18.0.2:80 check
