@@ -17,7 +17,7 @@ The statistics output contains more than 80 different metrics. To quickly conver
 
 Run the below in the terminal.
 
-`echo "show stat" | socat - tcp-connect:172.18.0.4:9000  | cut -d "," -f 1-2,5-10,34-36 | column -s, -t'`{{execute T1}}
+`echo "show stat" | socat - tcp-connect:172.18.0.4:9000  | cut -d "," -f 1-2,5-10,34-36 | column -s, -t`{{execute T1}}
 
 ### set server
 Sending `set server` allows you to change multiple aspects about a specific server within an HAProxy `backend`.  Some of the items that can be changed are:

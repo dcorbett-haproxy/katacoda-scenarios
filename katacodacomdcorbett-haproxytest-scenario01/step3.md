@@ -1,6 +1,6 @@
 ## Statistics Page
 HAProxy provides a verbose statistics page.  This should already be enabled and can be accessed from a separate browser window using the following URL:
-[https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/haproxy-stats
+https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/haproxy-stats
 
 The HAProxy statitics page provides a wealthy of information about the running HAProxy process as well as its frontends and backends.
 
