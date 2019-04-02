@@ -7,3 +7,5 @@
 ## Test Results
 `curl localhost`{{execute T1}}
 
+## Use Runtime API
+`echo "show info" | socat - tcp-connect:172.18.0.2:9000`{{execute T1}} 

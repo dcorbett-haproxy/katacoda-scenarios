@@ -12,7 +12,7 @@ At the top of your HAProxy configuration file is the `global` section, identifie
     log stdout local1 notice
     user haproxy
     group haproxy
-    stats socket /var/run/haproxy.sock user haproxy group haproxy mode 660 level admin
+    stats socket 172.18.0.2:9000 user haproxy group haproxy mode 660 level admin
 </pre>
 
 Let's go over how these settings work
@@ -24,7 +24,7 @@ The `log` setting ensures that warnings emitted during startup and issues that a
 The `user` and `group` lines tell HAProxy to drop privileges after initialization. Linux requires processes to be root in order to listen on ports below 1024. You’ll also typically want your TLS private keys to be readable only by root as well. Without defining a user and group to continue the process as, HAProxy will keep root privileges, which is a bad practice. Be aware that HAProxy itself does not create the user and group and so they should be created beforehand.
 
 ### stats socket
-The `stats` socket line enables the Runtime API, which you can use to dynamically disable servers and health checks, change the load balancing weights of servers, and pull other useful levers.
+The `stats` socket line enables the Runtime API, which you can use to dynamically disable servers and health checks, change the load balancing weights of servers, and pull other useful levers.  This can be specified as a unix socket (/var/run/haproxy.sock) or over TCP using (IP:port).
 
 ## Defaults
 As your configuration grows, using a `defaults` section will help reduce duplication. Its settings apply to all of the `frontend` and `backend` sections that come after it. You’re still free to override those settings within the sections that follow.

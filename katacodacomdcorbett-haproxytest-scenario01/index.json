@@ -2,6 +2,11 @@
   "title": "Getting Started with HAProxy",
   "description": "Learn how to get started with HAProxy",
   "details": {
+    "intro": {
+        "text":"intro.md",
+        "code":"env-init.sh",
+        "credits":"https://www.haproxy.com/"
+    },
     "steps": [
       {
         "title": "The essentials of an HAProxy configuration",
@@ -29,7 +34,9 @@
     }
   },
   "environment": {
-    "uilayout": "editor-terminal"
+    "uilayout": "editor-terminal",
+    "uieditorpath": "~/haproxy",
+    "hideuieditortree": true
   },
   "backend": {
     "imageid": "ubuntu"
