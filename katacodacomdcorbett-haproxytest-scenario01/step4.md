@@ -22,7 +22,7 @@ Run the below in the terminal.
 ### set server
 Sending `set server` allows you to change multiple aspects about a specific server within an HAProxy `backend`.  Some of the items that can be changed are:
 
-Below is just a brief description of the options available.  More detail can be found within the (HAProxy Documentation)[https://www.haproxy.com/documentation/hapee/1-9r1/onepage/management/#9.3]
+Below is just a brief description of the options available.  More detail can be found within the [HAProxy Documentation](https://www.haproxy.com/documentation/hapee/1-9r1/onepage/management/#9.3)
 * addr - Replace the current IP address of a server by the one provided.
 * agent -  Force a server's agent to a new state. This can be useful to immediately switch a server's state regardless of some slow agent checks for example.
 * agent-addr - Change addr for servers agent checks. Allows to migrate agent-checks to another address at runtime.
@@ -39,7 +39,7 @@ Run the below in the terminal.
 
 `echo "set server be_app/app1 maint" | socat - tcp-connect:172.18.0.4:9000`{{execute T1}}
 
-The server **app1** should now be disabled.  You can confirm by sending this by navigating to the statistics page: [https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/haproxy-stats
+The server **app1** should now be disabled.  You can confirm by sending this by navigating to the statistics page: https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/haproxy-stats
 
 You should see **app1** labeled in orange and under the "Status" column it should say "MAINT".
 
