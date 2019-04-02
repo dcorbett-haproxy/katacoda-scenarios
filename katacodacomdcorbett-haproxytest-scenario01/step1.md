@@ -41,6 +41,7 @@ So, you might decide to configure a defaults section that contains all of your T
     timeout client 5s
     timeout server 5s
 </pre>
+
 ### mode
 The `mode` setting defines whether HAProxy operates as a simple TCP proxy or if it’s able to inspect incoming traffic’s higher-level HTTP messages. The alternative to specifying `mode http` is to use `mode tcp`, which operates at the faster, but less-aware, level. If most of your `frontend` and `backend` sections would use the same mode, it makes sense to specify it in the `defaults` section to avoid repetition.
 
