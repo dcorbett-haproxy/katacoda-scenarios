@@ -26,13 +26,9 @@
     },
     "finish": {
       "text": "finish.md"
-    },
-    "assets": {
-      "host01": [
-         { "file" : "haproxy.cfg", "target": "~/" }
-      ]
     }
   },
+  "files": [ "haproxy.cfg" ],
   "environment": {
     "uilayout": "editor-terminal",
     "uieditorpath": "~/haproxy",
