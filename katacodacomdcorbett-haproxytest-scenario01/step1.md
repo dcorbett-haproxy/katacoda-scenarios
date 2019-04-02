@@ -12,7 +12,7 @@ At the top of your HAProxy configuration file is the `global` section, identifie
     log stdout local1 notice
     user haproxy
     group haproxy
-    stats socket 172.18.0.2:9000 user haproxy group haproxy mode 660 level admin
+    stats socket 172.18.0.4:9000 user haproxy group haproxy mode 660 level admin
 </pre>
 
 Let's go over how these settings work
@@ -85,8 +85,8 @@ The `balance` setting controls how HAProxy will select the server to respond to 
 
 <pre class="file" data-filename="haproxy.cfg" data-target="append">backend be_app
     balance roundrobin 
-    server app1 172.18.0.3:80 check
-    server app2 172.18.0.4:80 check
+    server app1 172.18.0.2:80 check
+    server app2 172.18.0.3:80 check
 
 backend be_stats
   stats uri /haproxy-stats
