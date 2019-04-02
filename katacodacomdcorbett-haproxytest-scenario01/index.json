@@ -24,7 +24,7 @@
     }
   },
   "assets": {
-    "host01": [
+    "client": [
         { "file" : "haproxy.cfg", "target": "/root/" }
     ]
   },
