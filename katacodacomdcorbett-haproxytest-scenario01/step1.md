@@ -12,7 +12,7 @@ At the top of your HAProxy configuration file is the `global` section, identifie
     log stdout local1 notice
     user haproxy
     group haproxy
-    stats socket /run/haproxy/haproxy.sock user haproxy group haproxy mode 660 level admin
+    stats socket /var/run/haproxy/haproxy.sock user haproxy group haproxy mode 660 level admin
 </pre>
 
 Let's go over how these settings work
