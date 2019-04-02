@@ -21,15 +21,12 @@
     },
     "finish": {
       "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+         { "file" : "haproxy.cfg", "target": "~/" }
+      ]
     }
-  },
-  "assets": {
-    "client": [
-        { "file" : "haproxy.cfg", "target": "/root/" }
-    ],
-    "host01": [
-        { "file" : "haproxy.cfg", "target": "/root/" }
-    ]
   },
   "environment": {
     "uilayout": "editor-terminal"
